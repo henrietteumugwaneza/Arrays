@@ -58,6 +58,7 @@ console.log("original Scores:",originalScores); // Output: [100, 85, 78]
 console.log("spread Copy:",spreadCopy);
 
 // Section B : Searching & Checking
+
  // Exercise 4: Searching for Elements in an Array
 
 const studentNames = ["Alice", "Bob", "Charlie", "Alice", "David"];
@@ -74,3 +75,16 @@ console.log(studentNames.includes("Charlie")); // Output: true
 // d
 console.log(studentNames.includes("Eve")); // Output: false
 
+//Exercise 5: Advenced  searching with find() and findIndex()
+ const products = [
+   {id: 1, name: "Laptop", price: 999},
+   {id: 2, name: "Smartphone", price: 499}, 
+   {id: 3, name: "Tablet", price: 299}, 
+   {id: 4, name: "Headphones", price: 199}
+    ];
+    // a
+    let foundProducts = products.find(product => product.id === 2);
+    console.log(foundProducts); // Output: {id: 2, name: "Smartphone", price: 499}
+    // b
+    let foundIndex = products.findIndex(product => product.price > 1000);
+    console.log(foundIndex); // Output: -1 (no product has price > 1000)
