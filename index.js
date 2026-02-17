@@ -80,7 +80,7 @@ console.log(studentNames.includes("Eve")); // Output: false
    {id: 1, name: "Laptop", price: 999},
    {id: 2, name: "Smartphone", price: 499}, 
    {id: 3, name: "Tablet", price: 299}, 
-   {id: 4, name: "Headphones", price: 199}
+   {id: 4, name: "Headphones", price: 1999}
     ];
     // a
     let foundProducts = products.find(product => product.id === 2);
