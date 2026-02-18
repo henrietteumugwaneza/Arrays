@@ -241,3 +241,21 @@ console.log("After setting center to 1:", gameBoard);
 // c
 console.log("Top-right corner value:", gameBoard[0][2]); // Output: 0
 
+// Exercise 16: Looping Through a Matrix
+
+// a
+console.log("Matrix values using nested loops:");
+for (let i = 0; i < gameBoard.length; i++) {
+  for (let j = 0; j < gameBoard[i].length; j++) {
+    console.log(`gameBoard[${i}][${j}] = ${gameBoard[i][j]}`);
+  }
+}
+
+// b
+let sum = 0;
+for (let i = 0; i < gameBoard.length; i++) {
+  for (let j = 0; j < gameBoard[i].length; j++) {
+    sum += gameBoard[i][j];
+  }
+}
+console.log("Sum of all elements:", sum); // Output: 1
