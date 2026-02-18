@@ -311,3 +311,24 @@ for (let value of data) {
 }
 console.log("Unique data (loop + includes):", uniqueData2); // Output: [1, 5, 2, 8, 9]
 
+// Challenge 2: Recreate reduce Using a Loop
+
+function myReduce(array, callback, initialValue) {
+  let accumulator = initialValue;
+  
+  for (let i = 0; i < array.length; i++) {
+    accumulator = callback(accumulator, array[i], i, array);
+  }
+  
+  return accumulator;
+}
+
+// Test: Calculate the sum of an array
+const testArray = [1, 2, 3, 4, 5];
+let testSum = myReduce(testArray, (sum, current) => sum + current, 0);
+console.log("Sum using myReduce:", testSum); // Output: 15
+
+// Additional test: Calculate product
+let testProduct = myReduce(testArray, (product, current) => product * current, 1);
+console.log("Product using myReduce:", testProduct); // Output: 120
+
