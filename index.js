@@ -333,6 +333,7 @@ let testProduct = myReduce(testArray, (product, current) => product * current, 1
 console.log("Product using myReduce:", testProduct); // Output: 120
 
 // Challenge 3: Shallow vs. Deep Copy for Nested Objects
+
 const company = [{name: "A", details: {city: "NY"}}, {name: "B", details: {city: "LA"}}];
 
 // a - Shallow Copy with spread operator
@@ -357,3 +358,53 @@ console.log("Deep copy after deep copy modification:");
 console.log(deepCopy); // Output: [{name: "A", details: {city: "Boston"}}, ...] - CHANGED
 console.log("Explanation: JSON.parse(JSON.stringify()) creates a true deep copy.");
 console.log("All nested objects are completely independent, so changes only affect the copy.");
+
+// Final Challenge
+// Project: Tic-Tac-Toe Board Analyzer
+
+// a - Board Setup (3x3 initialized with empty strings)
+let ticTacToeBoard = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]
+];
+
+// b - Place Moves
+ticTacToeBoard[0][0] = "X"; // top-left
+ticTacToeBoard[1][1] = "O"; // center
+console.log("Board after two moves:", ticTacToeBoard);
+
+// c - Check for Win
+function checkWin(board, playerSymbol) {
+  // Check rows
+  for (let i = 0; i < 3; i++) {
+    if (board[i].every(cell => cell === playerSymbol)) return true;
+  }
+
+  // Check columns
+  for (let j = 0; j < 3; j++) {
+    let colWin = true;
+    for (let i = 0; i < 3; i++) {
+      if (board[i][j] !== playerSymbol) {
+        colWin = false;
+        break;
+      }
+    }
+    if (colWin) return true;
+  }
+
+  // Check main diagonal
+  if (board[0][0] === playerSymbol && board[1][1] === playerSymbol && board[2][2] === playerSymbol) {
+    return true;
+  }
+
+  // Check anti-diagonal
+  if (board[0][2] === playerSymbol && board[1][1] === playerSymbol && board[2][0] === playerSymbol) {
+    return true;
+  }
+
+  return false;
+}
+
+console.log("Does X win?", checkWin(ticTacToeBoard, "X")); // false
+console.log("Does O win?", checkWin(ticTacToeBoard, "O")); // false
