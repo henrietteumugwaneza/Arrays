@@ -103,5 +103,24 @@ console.log(studentNames.includes("Eve")); // Output: false
 
   console.log(userAges.some(age => age % 5 === 0)); // Output: true
 
+// Section C: Transformation & Reordering
+//Exercise 7: Sorting and Reversing
+
+ let dataPoints = [42, 10, 500, 2, 77];
+
+// a
+
+let ascendingSort = [...dataPoints].sort((a, b) => a - b);
+console.log("Ascending order:", ascendingSort); // Output: [2, 10, 42, 77, 500]
+
+// b
+
+let descendingSort = [...dataPoints].sort((a, b) => b - a);
+console.log("Descending order:", descendingSort); // Output: [500, 77, 42, 10, 2]
+
+// c
+
+let reversedDataPoints = [...dataPoints].reverse();
+console.log("Reversed original array:", reversedDataPoints); // Output: [77, 2, 500, 10, 42]
 
 
