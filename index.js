@@ -167,3 +167,17 @@ console.log("Local currency prices:", localCurrencyPrices); // Output: [13.65, 2
 let formattedPrices = pricesUSD.map(price => `Item price: $${price.toFixed(2)}`);
 console.log("Formatted prices:", formattedPrices); // Output: ["Item price: $10.50", "Item price: $20.00", "Item price: $5.25"]
 
+// Exercise 11: Filtering Data (filter)
+
+const testScores = [45, 78, 92, 30, 65, 88];
+
+// a
+let passingScores = testScores.filter(score => score >= 70);
+console.log("Passing scores:", passingScores); // Output: [78, 92, 88]
+
+// b
+let average = testScores.reduce((sum, score) => sum + score, 0) / testScores.length;
+let belowAverage = testScores.filter(score => score < average);
+console.log("Average:", average); // Output: 66.33...
+console.log("Below average scores:", belowAverage); // Output: [45, 30, 65]
+
