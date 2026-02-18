@@ -259,3 +259,21 @@ for (let i = 0; i < gameBoard.length; i++) {
   }
 }
 console.log("Sum of all elements:", sum); // Output: 1
+
+// Section G: Mini Projects
+// Project 1: Student Result System
+
+const students = [{name: "A", score: 85}, {name: "B", score: 45}, {name: "C", score: 92}, {name: "D", score: 68}];
+
+// a - Filter Passed
+let passedStudents = students.filter(student => student.score >= 70);
+console.log("Passed students:", passedStudents); // Output: [{name: "A", score: 85}, {name: "C", score: 92}]
+
+// b - Average Score
+let averageScore = students.reduce((sum, student) => sum + student.score, 0) / students.length;
+console.log("Average score:", averageScore); // Output: 72.5
+
+// c - Top Scorer
+let topScorer = students.reduce((highest, student) => student.score > highest.score ? student : highest);
+console.log("Top scorer:", topScorer); // Output: {name: "C", score: 92}
+
