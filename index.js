@@ -26,7 +26,7 @@ invetory.pop();
 console.log(invetory); // Output: ["10", "20", "30"]
     // c
 invetory.unshift(0);
-console.log(invetory);
+console.log(invetory);// Output: [0, "10", "20", "30"]
 // d
 invetory.shift();
 console.log(invetory); // Output: ["10", "20", "30"]
@@ -88,3 +88,20 @@ console.log(studentNames.includes("Eve")); // Output: false
     // b
     let foundIndex = products.findIndex(product => product.price > 1000);
     console.log(foundIndex); // Output: -1 (no product has price > 1000)
+
+    //Exercise 6: chacking arry integrity with every() and some()
+
+  const userAges = [18, 24, 33, 16, 40];
+  //a
+
+  console.log(userAges.some(age => age < 18)); // Output: true
+  
+  // b
+  console.log(userAges.every(age => age >= 18)); // Output: false
+  
+  // c
+
+  console.log(userAges.some(age => age % 5 === 0)); // Output: true
+
+
+
