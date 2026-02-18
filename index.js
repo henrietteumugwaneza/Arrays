@@ -153,3 +153,17 @@ console.log("Flattened once:", flattenedOnce); // Output: [1, 2, 3, 4, [5, 6], 7
 let completelyFlattened = nestedList.flat(Infinity);
 console.log("Completely flattened:", completelyFlattened); // Output: [1, 2, 3, 4, 5, 6, 7]
 
+//Section D: Functional Programming (Higher-Order Methods)
+// Exercise 10: Mapping Data (map)
+
+const pricesUSD = [10.50, 20.00, 5.25];
+const exchangeRate = 1.3;
+
+// a
+let localCurrencyPrices = pricesUSD.map(price => price * exchangeRate);
+console.log("Local currency prices:", localCurrencyPrices); // Output: [13.65, 26, 6.825]
+
+// b
+let formattedPrices = pricesUSD.map(price => `Item price: $${price.toFixed(2)}`);
+console.log("Formatted prices:", formattedPrices); // Output: ["Item price: $10.50", "Item price: $20.00", "Item price: $5.25"]
+
