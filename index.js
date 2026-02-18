@@ -293,4 +293,21 @@ console.log("After updating Shirt quantity:", updatedCart); // Output: [{id: 1, 
 let cartAfterRemoval = cart.filter(item => item.id !== 2);
 console.log("After removing Pants:", cartAfterRemoval); // Output: [{id: 1, name: "Shirt", price: 20, quantity: 2}]
 
+// Section H: Advanced Challenges
+// Challenge 1: Remove Duplicates Without Set
+
+const data = [1, 5, 2, 8, 5, 1, 9, 2];
+
+// Approach 1: Using filter() with indexOf()
+let uniqueData1 = data.filter((value, index) => data.indexOf(value) === index);
+console.log("Unique data (filter + indexOf):", uniqueData1); // Output: [1, 5, 2, 8, 9]
+
+// Approach 2: Using a loop with includes()
+let uniqueData2 = [];
+for (let value of data) {
+  if (!uniqueData2.includes(value)) {
+    uniqueData2.push(value);
+  }
+}
+console.log("Unique data (loop + includes):", uniqueData2); // Output: [1, 5, 2, 8, 9]
 
