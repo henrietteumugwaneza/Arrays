@@ -195,3 +195,21 @@ console.log("Maximum price:", maxPrice); // Output: 20.00
 let countGreaterThan15 = pricesUSD.reduce((count, price) => price > 15 ? count + 1 : count, 0);
 console.log("Prices greater than $15:", countGreaterThan15); // Output: 1
 
+// Section E: Objects Inside Arrays (Real-World Data Structures)
+//Exercise 13: Sorting Objects
+
+ const users = [{name: "Zoe", age: 30},
+         {name: "Adam", age: 25}, 
+         {name: "Charlie", age: 30}];
+// a
+let sortedByAge = [...users].sort((a, b) => a.age - b.age);
+console.log("Sorted by age:", sortedByAge); // Output: [{name: "Adam", age: 25}, {name: "Zoe", age: 30}, {name: "Charlie", age: 30}]
+
+// b
+let sortedByAgeAndName = [...users].sort((a, b) => {
+  if (a.age !== b.age) {
+    return a.age - b.age;
+  }
+  return a.name.localeCompare(b.name);
+});
+console.log("Sorted by age then name:", sortedByAgeAndName); // Output: [{name: "Adam", age: 25}, {name: "Charlie", age: 30}, {name: "Zoe", age: 30}]
