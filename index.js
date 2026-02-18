@@ -222,3 +222,22 @@ console.log("User names:", userNames); // Output: ["Zoe", "Adam", "Charlie"]
 // b
 let usersOlderThan28 = users.filter(user => user.age > 28);
 console.log("Users older than 28:", usersOlderThan28); // Output: [{name: "Zoe", age: 30}, {name: "Charlie", age: 30}]
+
+// Section F: Multi-Dimensional Arrays (Matrices)
+// Exercise 15: Creating and Accessing a Matrix
+
+// a
+let gameBoard = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0]
+];
+console.log("Initial game board:", gameBoard);
+
+// b
+gameBoard[1][1] = 1;
+console.log("After setting center to 1:", gameBoard);
+
+// c
+console.log("Top-right corner value:", gameBoard[0][2]); // Output: 0
+
