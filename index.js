@@ -332,3 +332,28 @@ console.log("Sum using myReduce:", testSum); // Output: 15
 let testProduct = myReduce(testArray, (product, current) => product * current, 1);
 console.log("Product using myReduce:", testProduct); // Output: 120
 
+// Challenge 3: Shallow vs. Deep Copy for Nested Objects
+const company = [{name: "A", details: {city: "NY"}}, {name: "B", details: {city: "LA"}}];
+
+// a - Shallow Copy with spread operator
+let shallowCopy = [...company];
+shallowCopy[0].details.city = "Boston";
+
+console.log("Original company after shallow copy modification:");
+console.log(company); // Output: Both changed! [{name: "A", details: {city: "Boston"}}, ...]
+console.log("Shallow copy after shallow copy modification:");
+console.log(shallowCopy); // Output: [{name: "A", details: {city: "Boston"}}, ...]
+console.log("Explanation: The spread operator creates a shallow copy - it only copies the top level.");
+console.log("The nested 'details' object is still referenced from the original, so changes affect both.");
+
+// b - Deep Copy using JSON.parse(JSON.stringify())
+const company2 = [{name: "A", details: {city: "NY"}}, {name: "B", details: {city: "LA"}}];
+let deepCopy = JSON.parse(JSON.stringify(company2));
+deepCopy[0].details.city = "Boston";
+
+console.log("\nOriginal company2 after deep copy modification:");
+console.log(company2); // Output: [{name: "A", details: {city: "NY"}}, ...] - UNCHANGED
+console.log("Deep copy after deep copy modification:");
+console.log(deepCopy); // Output: [{name: "A", details: {city: "Boston"}}, ...] - CHANGED
+console.log("Explanation: JSON.parse(JSON.stringify()) creates a true deep copy.");
+console.log("All nested objects are completely independent, so changes only affect the copy.");
