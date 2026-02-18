@@ -277,3 +277,20 @@ console.log("Average score:", averageScore); // Output: 72.5
 let topScorer = students.reduce((highest, student) => student.score > highest.score ? student : highest);
 console.log("Top scorer:", topScorer); // Output: {name: "C", score: 92}
 
+// Project 2: Shopping Cart Management
+
+const cart = [{id: 1, name: "Shirt", price: 20, quantity: 2}, {id: 2, name: "Pants", price: 50, quantity: 1}];
+
+// a - Calculate Total Cost
+let cartTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+console.log("Total cost:", cartTotal); // Output: 90
+
+// b - Modify Quantity
+let updatedCart = cart.map(item => item.id === 1 ? {...item, quantity: 3} : item);
+console.log("After updating Shirt quantity:", updatedCart); // Output: [{id: 1, name: "Shirt", price: 20, quantity: 3}, {id: 2, name: "Pants", price: 50, quantity: 1}]
+
+// c - Remove Item
+let cartAfterRemoval = cart.filter(item => item.id !== 2);
+console.log("After removing Pants:", cartAfterRemoval); // Output: [{id: 1, name: "Shirt", price: 20, quantity: 2}]
+
+
